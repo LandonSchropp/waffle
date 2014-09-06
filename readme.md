@@ -1,6 +1,6 @@
 # Griddle
 
-Griddle is a beautiful, simple, responsive, powerful grid system built using Flexbox. It allows a developer to create dynamic, pages quickly and easily.
+Griddle is a beautiful, simple, responsive, powerful grid system built using flexbox. It allows a developer to create dynamic, pages quickly and easily.
 
 For a look at what Griddle can do, check out the demos on CodePen. TODO: Add CodePen demos.
 
