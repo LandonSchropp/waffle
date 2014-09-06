@@ -36,4 +36,6 @@ Instead, it's applied to each of the child elements of the `row` and `column`.
 
 ## Credits
 
-Griddle is open source because my my benevolent employer, Quve, allowed me to share it. If you're a developer based in the Seattle area and you're interested in building awesome things like Griddle, [drop me a line](mailto:landon@quve.com).
+Griddle was created by [Landon Schropp](http://twitter.com/LandonSchropp).
+
+I have to give a special thanks to [Quve](http://www.quve.com/), my benevolent employer. All of the development for Griddle was done while working at Quve, and they were kind enough to let me open source and share this project. If you're a developer in the Seattle area and you're interested working for an awesome company and building great products, [drop me a line](mailto:landon@quve.com).
