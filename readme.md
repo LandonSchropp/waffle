@@ -40,5 +40,6 @@ There's still a lot of work to be done on Griddle. Here's the short list:
 - [ ] Create a few demos real-world demos.
 - [ ] Make a Bower package for Griddle.
 - [ ] Write a detailed blog post on how to use Griddle.
+- [ ] Create a nice landing website for Griddle.
 - [ ] Create a Rails gem for Griddle.
 - [ ] Find a better name for rows and columns.
