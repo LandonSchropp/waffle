@@ -19,7 +19,7 @@ Griddle is a beautiful, simple, responsive, powerful grid system built using fle
 There are a few minor caveats to be aware of when using Griddle:
 
 * Due to the way flexbox works, the gutter cannot be applied directly to a column or row element.
-Instead, it's applied to each of the child elements of the `row` and `column`.
+Instead, it's applied to each of the child elements of the `row` and `column`. Therefore, in order for the gutter to show up on a column, it must have a child element.
 * The gutter is always on the left and right sides of a `row` or `column`.
 
 ## Credits
@@ -32,7 +32,9 @@ I have to give a special thanks to [Quve](http://www.quve.com/), my benevolent e
 
 There's still a lot of work to be done on Griddle. Here's the short list:
 
-- [ ] Add a build script for generating the project.
+- [ ] Add a script for generating the CSS files.
+- [ ] Add the license.
+- [ ] Add the library to cdnjs.
 - [ ] Create a few basic examples of Griddle in use.
 - [ ] Add the demos to the project page.
 - [ ] Write the documentation for using Griddle with CSS.
