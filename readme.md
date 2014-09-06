@@ -10,6 +10,7 @@ TODO: Add CodePen demos.
 
 * Download Griddle and include it in your project.
 * Add Autoprefixer to your project.
+* Set the Sass variables
 * Use the mixins or classes included in Griddle.
 
 To start, either download the Sass file and include it in your project or source the project from CDNJS. TODO: Add the project to cdnjs.
