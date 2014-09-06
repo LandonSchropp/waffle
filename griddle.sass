@@ -1,0 +1,101 @@
+// The size of the gutter.
+$griddle-gutter-size: 1rem
+
+// When the viewport is smaller than this size
+$griddle-collapse-viewport-width: 640px
+
+// A container for columns.
+@mixin column-container($reverse: false)
+  display: flex
+  flex-direction: row
+
+  @if $reverse
+    flex-direction: reverse-row
+
+// A container for rows.
+@mixin row-container($reverse: false)
+  display: flex
+  flex-direction: column
+
+  @if $reverse
+    flex-direction: reverse-column
+
+// TODO: Unify `row` and `column` under one name.
+
+// Styles a `column`. A `column` element should be a direct descendent of a `column-container`
+// element. This mixin takes the following parameter:
+// * `$size`: The size of the `column`. If this value is an integer, the `column` will be sized
+//   proportionally. If it's a unit size, such as `300px`, or `auto`, the `column` will be sized
+//   statically.
+@mixin column($size: 1)
+
+  @if type-of($size) == "number" and unitless($size)
+    flex: $size
+  @else
+    flex: 0 0 $size
+
+// Styles a `row`. A `row` element should be a direct descendent of a `row-container` element.
+// Functionally, there's no difference between a `row` and a `column`. However, they're kept
+// separate to make the code more readable. This mixin takes the following parameter:
+// * `$size`: The size of the `row`. This is the same as the `$size` parameter for a `column`.
+@mixin row($size: 1)
+  @include column($size)
+
+// Applies the gutter to the left and right of a `column` or `row`.
+.gutter > *
+  margin-left: $default-margin / 2
+  margin-right: $default-margin / 2
+
+// A `row-container` contains one or more `row`'s.
+.row-container
+  @include row-container
+
+// A `column-container` contains one or more `column`'s.
+.column-container
+  @include column-container
+
+// The same as a `row-container`, but the order of the `row`s are reversed.
+.reverse-row-container
+  @include row-container($reverse: true)
+
+// The same as a `column-container`, but the order of the `column`s are reversed.
+.reverse-column-container
+  @include column-container($reverse: true)
+
+// A `collapsible-row` that will stack its 'row's into 'columns's when in a mobile browser.
+.collapsible-row-container
+  @include column-container
+
+  @media (min-width: #{ $griddle-collapse-viewport-width })
+    @include row-container
+
+// A standard `row` which should be contained within a `row-container`. This column is proportional
+// with a size of 1.
+.row
+  @include row
+
+// A standard `column` which should be contained within a `column-container`. This column is
+// proportional with a size of 1.
+.column
+  @include column
+
+// A `column` whose width is the same as it's content.
+.auto-column
+  @include column($size: auto)
+
+// A `row` whose height is the same as it's content.
+.auto-row
+  @include row($size: auto)
+
+$_numbers: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven"
+
+@for $index from 1 through length($_numbers)
+  $number: nth($_numbers, $index)
+
+  // A standard `column` with a proportional size of `$number`.
+  .#{ $number }-column
+    @include column($index)
+
+  // A standard `row` with a proportional size of `$number`.
+  .#{ $number }-row
+    @include row($index)
