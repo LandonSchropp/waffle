@@ -14,7 +14,8 @@
   "devDependencies": {
     "gulp": "~3.8",
     "gulp-clean": "~0.3",
-    "gulp-ruby-sass": "~0.7"
+    "gulp-ruby-sass": "~0.7",
+    "gulp-autoprefixer": "~0.0"
   },
   "private": true,
   "license": "MIT"
