@@ -33,9 +33,10 @@ I have to give a special thanks to [Quve](http://www.quve.com/), my benevolent e
 
 There's still a lot of work to be done on Griddle. Here's the short list:
 
-- [ ] Add a script for generating the CSS files.
+- [ ] Add a build script for generating the CSS files.
 - [ ] Add the license.
 - [ ] Add the library to cdnjs.
+- [ ] Configure the build script to use the version specified in `package.json`.
 - [ ] Create a few basic examples of Griddle in use.
 - [ ] Add the demos to the project page.
 - [ ] Write the documentation for using Griddle with CSS.
@@ -45,4 +46,4 @@ There's still a lot of work to be done on Griddle. Here's the short list:
 - [ ] Write a detailed blog post on how to use Griddle.
 - [ ] Create a nice landing website for Griddle.
 - [ ] Create a Rails gem for Griddle.
-- [ ] Find a better name for rows and columns.
+- [ ] Find a better name for `row` and `column`.
