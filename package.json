@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Griddle is a beautiful, simple, responsive, powerful grid system built using flexbox.",
   "author": "Landon Schropp <schroppl@gmail.com>",
+  "homepage": "https://github.com/LandonSchropp/griddle",
   "repository": {
     "type": "git",
     "url": "https://github.com/LandonSchropp/griddle"
@@ -11,7 +12,9 @@
     "url": "https://github.com/LandonSchropp/griddle/issues"
   },
   "devDependencies": {
-    "gulp": "~3.8"
+    "gulp": "~3.8",
+    "gulp-clean": "~0.3",
+    "gulp-ruby-sass": "~0.7"
   },
   "private": true,
   "license": "MIT"
