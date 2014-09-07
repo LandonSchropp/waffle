@@ -21,6 +21,7 @@ There are a few minor caveats to be aware of when using Griddle:
 * Due to the way flexbox works, the gutter cannot be applied directly to a column or row element.
 Instead, it's applied to each of the child elements of the `row` and `column`. Therefore, in order for the gutter to show up on a column, it must have a child element.
 * The gutter is always on the left and right sides of a `row` or `column`.
+* When columns or rows are different size, adding a border can throw off their sizes. To fix this, use an inset `box-shadow` instead.
 
 ## Credits
 
