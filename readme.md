@@ -34,7 +34,7 @@ I have to give a special thanks to [Quve](http://www.quve.com/), my benevolent e
 There's still a lot of work to be done on Griddle. Here's the short list:
 
 - [x] Add a build script for generating the CSS files.
-- [ ] Add the license.
+- [x] Add the license.
 - [ ] Add the library to cdnjs.
 - [ ] Configure the build script to use the version specified in `package.json`.
 - [ ] Create a few basic examples of Griddle in use.
