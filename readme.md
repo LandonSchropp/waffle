@@ -35,7 +35,6 @@ There's still a lot of work to be done on Griddle. Here's the short list:
 
 - [x] Add a build script for generating the CSS files.
 - [x] Add the license.
-- [ ] Add the library to cdnjs.
 - [x] Configure the build script to use the version specified in `package.json`.
 - [ ] Write the documentation for using Griddle with CSS.
 - [ ] Write the documentation for using Griddle with Sass.
