@@ -18,7 +18,8 @@
     "gulp-autoprefixer": "~0.0",
     "gulp-minify-css": "~0.3.8",
     "gulp-rename": "~1.2",
-    "run-sequence": "~0.3"
+    "run-sequence": "~0.3",
+    "gulp-replace": "~0.4"
   },
   "private": true,
   "license": "MIT"
