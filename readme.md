@@ -36,14 +36,13 @@ There's still a lot of work to be done on Griddle. Here's the short list:
 - [x] Add a build script for generating the CSS files.
 - [x] Add the license.
 - [ ] Add the library to cdnjs.
-- [ ] Configure the build script to use the version specified in `package.json`.
-- [ ] Create a few basic examples of Griddle in use.
-- [ ] Add the demos to the project page.
+- [x] Configure the build script to use the version specified in `package.json`.
 - [ ] Write the documentation for using Griddle with CSS.
 - [ ] Write the documentation for using Griddle with Sass.
-- [ ] Create a few demos real-world demos.
+- [ ] Create a few basic examples of Griddle in use.
+- [ ] Add the demos to the project page.
 - [ ] Make a Bower package for Griddle.
 - [ ] Write a detailed blog post on how to use Griddle.
+- [ ] Add the library to cdnjs.
 - [ ] Create a nice landing website for Griddle.
-- [ ] Create a Rails gem for Griddle.
-- [ ] Find a better name for `row` and `column`.
+- [ ] Reconsider the class names.
