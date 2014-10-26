@@ -1,10 +1,10 @@
 /*! Griddle <VERSION> by Landon Schropp (https://github.com/LandonSchropp/griddle) */
 
 // The size of the gutter.
-$griddle-gutter-size: 1rem
+$griddle-gutter-size: 1rem !default
 
 // The media query used determine when columns and rows should be collapsed.
-$griddle-collapsible-media-query: "(min-width: 640px)"
+$griddle-collapsible-media-query: "(min-width: 640px)" !default
 
 // A container for columns.
 @mixin column-container($reverse: false)
@@ -120,8 +120,10 @@ $_rows: (auto-row: auto, row: 1, one-row: 1)
   .#{ $name }
     @include row($size: $size)
 
+    // Applies a gutter to the row or column.
     &.gutter
       @include gutter
 
+    // Makes the row or column scrollable.
     &.scrollable
       @include scrollable
