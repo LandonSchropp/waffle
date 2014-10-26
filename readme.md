@@ -173,7 +173,7 @@ There's still a lot of work to be done on Griddle. Here's the short list:
 - [x] Pluralize the rows and columns.
 - [x] Reorder the column and row styles so they're consistant.
 - [x] Scope the modifier classes so they only apply to the grid classes.
-- [ ] Make Griddle use the variables defined by the importer if they've already been set.
+- [x] Make Griddle use the variables defined by the importer if they've already been set.
 - [ ] Create a few basic examples of Griddle in use.
 - [ ] Add the demos to the project page.
 - [ ] Make a Bower package for Griddle.
