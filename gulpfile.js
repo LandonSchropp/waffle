@@ -15,8 +15,9 @@ gulp.task('clean', function() {
 
 gulp.task('compile', function() {
   return gulp.src('source/griddle.sass')
-    .pipe(sass({style: 'expanded', lineNumbers: true}))
     .pipe(replace(/<VERSION>/, package.version))
+    .pipe(gulp.dest('build'))
+    .pipe(sass({style: 'expanded', lineNumbers: true}))
     .pipe(autoprefixer('last 2 versions', '> 1%', 'ie >= 10'))
     .on('error', function (err) { console.log(err.message); })
     .pipe(gulp.dest('build'));
