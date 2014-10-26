@@ -46,6 +46,11 @@ $griddle-collapsible-media-query: "(min-width: 640px)"
     margin-left: $size / 2
     margin-right: $size / 2
 
+// Makes a `column` or `row` scrollable.
+@mixin scrollable
+  overflow: scroll
+  overflow-scrolling: touch
+
 // A `column-container` contains one or more `column`'s.
 .column-container
   @include column-container
@@ -64,8 +69,8 @@ $griddle-collapsible-media-query: "(min-width: 640px)"
 
 // A `column-container` that collapses on mobile browsers.
 .column-container.collapsible
-@media #{$griddle-collapsible-media-query}
-  @include column-container
+  @media #{$griddle-collapsible-media-query}
+    @include column-container
 
 // A `row-container` that collapses on mobile browsers.
 .row-container.collapsible
@@ -95,10 +100,13 @@ $_rows: (auto-row: auto, row: 1, one-row: 1)
   $_columns: map-merge($_columns, (#{$name}-columns: $number))
   $_rows: map-merge($_rows, (#{$name}-rows: $number))
 
-// Defines the column or row `$name` with a size of `$size`.
+// Defines the column or row `$name` with a size of `$size` and the modifier mixins.
 @each $name, $size in map-merge($_columns, $_rows)
   .#{ $name }
     @include row($size: $size)
 
     &.gutter
       @include gutter
+
+    &.scrollable
+      @include scrollable
