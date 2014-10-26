@@ -1,0 +1,129 @@
+/*! Griddle 0.1.0 by Landon Schropp (https://github.com/LandonSchropp/griddle) */
+
+// The size of the gutter.
+$griddle-gutter-size: 1rem !default
+
+// The media query used determine when columns and rows should be collapsed.
+$griddle-collapsible-media-query: "(min-width: 640px)" !default
+
+// A container for columns.
+@mixin column-container($reverse: false)
+  display: flex
+  flex-direction: row
+
+  @if $reverse
+    flex-direction: reverse-row
+
+// A container for rows.
+@mixin row-container($reverse: false)
+  display: flex
+  flex-direction: column
+
+  @if $reverse
+    flex-direction: reverse-column
+
+// Styles a `column`. A `column` element should be a direct descendent of a `column-container`
+// element. This mixin takes the following parameter:
+// * `$size`: The size of the `column`. If this value is an integer, the `column` will be sized
+//   proportionally. If it's a unit size, such as `300px`, or `auto`, the `column` will be sized
+//   statically.
+@mixin column($size: 1)
+  @if type-of($size) == "number" and unitless($size)
+    flex: $size
+  @else
+    flex: 0 0 $size
+
+// Styles a `row`. A `row` element should be a direct descendent of a `row-container` element.
+// Functionally, there's no difference between a `row` and a `column`. However, they're kept
+// separate to make the code more readable. This mixin takes the following parameter:
+// * `$size`: The size of the `row`. This is the same as the `$size` parameter for a `column`.
+@mixin row($size: 1)
+  @include column($size)
+
+// Applies the gutter to the left and right of a `column` or `row`.
+@mixin gutter($size: $griddle-gutter-size)
+  & > *
+    margin-left: $size / 2
+    margin-right: $size / 2
+
+// Makes a `column` or `row` scrollable.
+@mixin scrollable
+  overflow: scroll
+  overflow-scrolling: touch
+
+// A `column-container` contains one or more `column`'s.
+.column-container
+  @include column-container
+
+// A `row-container` contains one or more `row`'s.
+.row-container
+  @include row-container
+
+// The same as a `column-container`, but the order of the `column`s are reversed.
+.column-container.reverse
+  @include column-container($reverse: true)
+
+// The same as a `row-container`, but the order of the `row`s are reversed.
+.row-container.reverse
+  @include row-container($reverse: true)
+
+// A `column-container` that collapses on mobile browsers.
+.column-container.collapsible
+  @media #{$griddle-collapsible-media-query}
+    @include column-container
+
+// A `row-container` that collapses on mobile browsers.
+.row-container.collapsible
+  @media #{$griddle-collapsible-media-query}
+    @include row-container
+
+// A reversed `column-container` that collapses on mobile browsers.
+.column-container.collapsible.reverse
+  @media #{$griddle-collapsible-media-query}
+    @include column-container($reverse: true)
+
+// A reversed `row-container` that collapses on mobile browsers.
+.row-container.collapsible.reverse
+  @media #{$griddle-collapsible-media-query}
+    @include row-container($reverse: true)
+
+// Define the numbers.
+$_numbers: (one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12)
+
+// Generate the fractions
+$_denominators: (third: 3, fourth: 4, fifth: 5, sixth: 6, seventh: 7, eighth: 8, ninth: 9, tenth: 10, eleventh: 11, twelfth: 12)
+$_fractions: (one-half: 50%)
+
+@each $denominator-name, $denominator in $_denominators
+  @each $numerator-name, $numerator in $_numbers
+    @if $numerator < $denominator
+      $fraction: $numerator / $denominator * 100%
+      $fraction-name: "#{ $numerator-name }-#{ $denominator-name }"
+
+      @if $numerator != 1
+        $fraction-name: "#{ $fraction-name }s"
+
+      $_fractions: map-merge($_fractions, (#{ $fraction-name }: $fraction))
+
+// Generate the column and row names and sizes.
+$_columns: (auto-column: auto, column: 1, one-column: 1)
+$_rows: (auto-row: auto, row: 1, one-row: 1)
+
+@for $index from 2 through length($_numbers)
+  $name: nth(map-keys($_numbers), $index)
+  $number: map-get($_numbers, $name)
+  $_columns: map-merge($_columns, (#{$name}-columns: $number))
+  $_rows: map-merge($_rows, (#{$name}-rows: $number))
+
+// Defines the column or row `$name` with a size of `$size` and the modifier mixins.
+@each $name, $size in map-merge($_columns, $_rows)
+  .#{ $name }
+    @include row($size: $size)
+
+    // Applies a gutter to the row or column.
+    &.gutter
+      @include gutter
+
+    // Makes the row or column scrollable.
+    &.scrollable
+      @include scrollable
