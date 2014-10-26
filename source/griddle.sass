@@ -85,7 +85,7 @@ $griddle-collapsible-media-query: "(min-width: 640px)"
 // Define the numbers.
 $_numbers: (one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12)
 
-// Generate the columns and rows.
+// Generate the column and row names and sizes.
 $_columns: (auto-column: auto, column: 1, one-column: 1)
 $_rows: (auto-row: auto, row: 1, one-row: 1)
 
@@ -95,12 +95,10 @@ $_rows: (auto-row: auto, row: 1, one-row: 1)
   $_rows: map-merge($_rows, (#{$name}-rows: $number))
   $_columns: map-merge($_columns, (#{$name}-columns: $number))
 
-// Defines the row `$row` with a size of `$size`.
-@each $row, $size in $_rows
-  .#{ $row }
+// Defines the column or row `$name` with a size of `$size`.
+@each $name, $size in map-merge($_columns, $_rows)
+  .#{ $name }
     @include row($size: $size)
 
-// Defines the column `$column` with a size of `$size`.
-@each $column, $size in $_columns
-  .#{ $column }
-    @include column($size: $size)
+    &.gutter
+      @include gutter
