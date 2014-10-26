@@ -3,12 +3,8 @@
 // The size of the gutter.
 $griddle-gutter-size: 1rem
 
-// The media query used determine when the grid system should be applied.
+// The media query used determine when rows and columsn should be collapsed.
 $griddle-collapsible-media-query: "(min-width: 640px)"
-
-// Private variables defined for Griddle's internal use.
-$_numbers: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven"
-$_fractions: "half", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth"
 
 // A container for columns.
 @mixin column-container($reverse: false)
@@ -45,9 +41,10 @@ $_fractions: "half", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "
   @include column($size)
 
 // Applies the gutter to the left and right of a `column` or `row`.
-.gutter > *
-  margin-left: $griddle-gutter-size / 2
-  margin-right: $griddle-gutter-size / 2
+@mixin gutter($size: $griddle-gutter-size)
+  & > *
+    margin-left: $size / 2
+    margin-right: $size / 2
 
 // A `row-container` contains one or more `row`'s.
 .row-container
@@ -85,31 +82,25 @@ $_fractions: "half", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "
   @media #{$griddle-collapsible-media-query}
     @include column-container($reverse: true)
 
-// A standard `row` which is contained within a `row-container`. This column is proportional with a
-// size of 1.
-.row, .one-row
-  @include row
+// Define the numbers.
+$_numbers: (one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12)
 
-// A standard `column` which is contained within a `column-container`. This column is proportional
-// with a size of 1.
-.column, .one-column
-  @include column
+// Generate the columns and rows.
+$_columns: (auto-column: auto, column: 1, one-column: 1)
+$_rows: (auto-row: auto, row: 1, one-row: 1)
 
-// A `column` whose width is the same as it's content.
-.auto-column
-  @include column($size: auto)
+@for $index from 2 through length($_numbers)
+  $name: nth(map-keys($_numbers), $index)
+  $number: map-get($_numbers, $name)
+  $_rows: map-merge($_rows, (#{$name}-rows: $number))
+  $_columns: map-merge($_columns, (#{$name}-columns: $number))
 
-// A `row` whose height is the same as it's content.
-.auto-row
-  @include row($size: auto)
+// Defines the row `$row` with a size of `$size`.
+@each $row, $size in $_rows
+  .#{ $row }
+    @include row($size: $size)
 
-@for $size from 1 through length($_numbers)
-  $number: nth($_numbers, $size)
-
-  // A standard `column` with a proportional size of `$size`.
-  .#{ $number }-columns
-    @include column($size)
-
-  // A standard `row` with a proportional size of `$size`.
-  .#{ $number }-rows
-    @include row($size)
+// Defines the column `$column` with a size of `$size`.
+@each $column, $size in $_columns
+  .#{ $column }
+    @include column($size: $size)
