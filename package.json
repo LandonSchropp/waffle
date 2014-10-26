@@ -1,6 +1,6 @@
 {
   "name": "griddle",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Griddle is a beautiful, simple, responsive, powerful grid system built using flexbox.",
   "author": "Landon Schropp <schroppl@gmail.com>",
   "homepage": "https://github.com/LandonSchropp/griddle",
