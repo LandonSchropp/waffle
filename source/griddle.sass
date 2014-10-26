@@ -87,12 +87,12 @@ $_fractions: "half", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "
 
 // A standard `row` which is contained within a `row-container`. This column is proportional with a
 // size of 1.
-.row
+.row, .one-row
   @include row
 
 // A standard `column` which is contained within a `column-container`. This column is proportional
 // with a size of 1.
-.column
+.column, .one-column
   @include column
 
 // A `column` whose width is the same as it's content.
@@ -103,13 +103,13 @@ $_fractions: "half", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "
 .auto-row
   @include row($size: auto)
 
-@for $index from 1 through length($_numbers)
-  $number: nth($_numbers, $index)
+@for $size from 1 through length($_numbers)
+  $number: nth($_numbers, $size)
 
-  // A standard `column` with a proportional size of `$number`.
-  .#{ $number }-column
-    @include column($index)
+  // A standard `column` with a proportional size of `$size`.
+  .#{ $number }-columns
+    @include column($size)
 
-  // A standard `row` with a proportional size of `$number`.
-  .#{ $number }-row
-    @include row($index)
+  // A standard `row` with a proportional size of `$size`.
+  .#{ $number }-rows
+    @include row($size)

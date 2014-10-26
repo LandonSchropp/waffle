@@ -41,7 +41,7 @@ Griddle is built around the idea of *proportions*. If you'd like a column to tak
 
 ``` html
 <section class="column-container">
-  <div class="two-column">Column 1</div>
+  <div class="two-columns">Column 1</div>
   <div class="column">Column 2</div>
   <div class="column">Column 3</div>
 </section>
@@ -164,7 +164,7 @@ There's still a lot of work to be done on Griddle. Here's the short list:
 - [x] Fix the way collapsible rows work.
 - [ ] Add offsets.
 - [ ] Add scrollable.
-- [ ] Pluralize the columns.
+- [x] Pluralize the rows and columns.
 - [ ] Scope the modifier classes so they only apply to the grid classes.
 - [ ] Create a few basic examples of Griddle in use.
 - [ ] Add the demos to the project page.
