@@ -51,13 +51,6 @@ $griddle-collapsible-media-query: "(min-width: 640px)"
   overflow: scroll
   overflow-scrolling: touch
 
-// Offsets a `column` or `row` to the left or right. This mixin takes in the following parameters:
-// * `$side`: The side to applie the column to. This should be either `"left"` or `"right"`.
-// * `$number-of-offset-columns`: The number of columns to offset the element by.
-// * `$total-number-of-columns`: The total number of columns, including the offset columns.
-@mixin offset($side: "left", $number-of-offset-columns, $total-number-of-columns)
-  margin-#{$side}: $number-of-offset-columns / $total-number-of-columns * 100%
-
 // A `column-container` contains one or more `column`'s.
 .column-container
   @include column-container
@@ -127,19 +120,8 @@ $_rows: (auto-row: auto, row: 1, one-row: 1)
   .#{ $name }
     @include row($size: $size)
 
-// Build a list containing the column and row classes.
-[class$="column"], [class$="row"]
+    &.gutter
+      @include gutter
 
-  &.gutter
-    @include gutter
-
-  &.scrollable
-    @include scrollable
-
-  // Allows a user to offset
-  @each $fraction-name, $fraction in $_fractions
-    &.offset-left-#{ $fraction-name }
-      margin-left: $fraction
-
-    &.offset-right-#{ $fraction-name }
-      margin-right: $fraction
+    &.scrollable
+      @include scrollable
