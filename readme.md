@@ -176,8 +176,10 @@ There's still a lot of work to be done on Griddle. Here's the short list:
 - [x] Make Griddle use the variables defined by the importer if they've already been set.
 - [ ] Create a few basic examples of Griddle in use.
 - [ ] Add the demos to the project page.
+- [ ] Set up the release task.
+- [ ] Add the library to cdnjs through the release task.
+- [ ] Add a Ruby gem and configure it to deploy.
 - [ ] Make a Bower package for Griddle.
 - [ ] Write a detailed blog post on how to use Griddle.
-- [ ] Add the library to cdnjs.
 - [ ] Create a nice landing website for Griddle.
 - [ ] Reconsider the class names.
