@@ -166,7 +166,7 @@ There's still a lot of work to be done on Griddle. Here's the short list:
 - [ ] Add scrollable.
 - [x] Pluralize the rows and columns.
 - [x] Reorder the column and row styles so they're consistant.
-- [ ] Scope the modifier classes so they only apply to the grid classes.
+- [x] Scope the modifier classes so they only apply to the grid classes.
 - [ ] Create a few basic examples of Griddle in use.
 - [ ] Add the demos to the project page.
 - [ ] Make a Bower package for Griddle.
