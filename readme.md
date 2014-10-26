@@ -163,7 +163,7 @@ There's still a lot of work to be done on Griddle. Here's the short list:
 - [ ] Write the documentation for using Griddle with Sass.
 - [x] Fix the way collapsible rows work.
 - [ ] Add offsets.
-- [ ] Add scrollable.
+- [x] Add scrollable.
 - [x] Pluralize the rows and columns.
 - [x] Reorder the column and row styles so they're consistant.
 - [x] Scope the modifier classes so they only apply to the grid classes.
