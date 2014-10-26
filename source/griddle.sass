@@ -3,7 +3,7 @@
 // The size of the gutter.
 $griddle-gutter-size: 1rem
 
-// The media query used determine when rows and columsn should be collapsed.
+// The media query used determine when columns and rows should be collapsed.
 $griddle-collapsible-media-query: "(min-width: 640px)"
 
 // A container for columns.
@@ -46,41 +46,41 @@ $griddle-collapsible-media-query: "(min-width: 640px)"
     margin-left: $size / 2
     margin-right: $size / 2
 
+// A `column-container` contains one or more `column`'s.
+.column-container
+  @include column-container
+
 // A `row-container` contains one or more `row`'s.
 .row-container
   @include row-container
 
-// A `column-container` contains one or more `column`'s.
-.column-container
-  @include column-container
+// The same as a `column-container`, but the order of the `column`s are reversed.
+.column-container.reverse
+  @include column-container($reverse: true)
 
 // The same as a `row-container`, but the order of the `row`s are reversed.
 .row-container.reverse
   @include row-container($reverse: true)
 
-// The same as a `column-container`, but the order of the `column`s are reversed.
-.column-container.reverse
-  @include column-container($reverse: true)
+// A `column-container` that collapses on mobile browsers.
+.column-container.collapsible
+@media #{$griddle-collapsible-media-query}
+  @include column-container
 
 // A `row-container` that collapses on mobile browsers.
 .row-container.collapsible
   @media #{$griddle-collapsible-media-query}
     @include row-container
 
-// A `column-container` that collapses on mobile browsers.
-.column-container.collapsible
+// A reversed `column-container` that collapses on mobile browsers.
+.column-container.collapsible.reverse
   @media #{$griddle-collapsible-media-query}
-    @include column-container
+    @include column-container($reverse: true)
 
 // A reversed `row-container` that collapses on mobile browsers.
 .row-container.collapsible.reverse
   @media #{$griddle-collapsible-media-query}
     @include row-container($reverse: true)
-
-// A reversed `column-container` that collapses on mobile browsers.
-.column-container.collapsible.reverse
-  @media #{$griddle-collapsible-media-query}
-    @include column-container($reverse: true)
 
 // Define the numbers.
 $_numbers: (one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12)
@@ -92,8 +92,8 @@ $_rows: (auto-row: auto, row: 1, one-row: 1)
 @for $index from 2 through length($_numbers)
   $name: nth(map-keys($_numbers), $index)
   $number: map-get($_numbers, $name)
-  $_rows: map-merge($_rows, (#{$name}-rows: $number))
   $_columns: map-merge($_columns, (#{$name}-columns: $number))
+  $_rows: map-merge($_rows, (#{$name}-rows: $number))
 
 // Defines the column or row `$name` with a size of `$size`.
 @each $name, $size in map-merge($_columns, $_rows)
