@@ -3,8 +3,8 @@
 // The size of the gutter.
 $griddle-gutter-size: 1rem
 
-// When the viewport is smaller than this size
-$griddle-collapse-viewport-width: 640px
+// The media query used determine when the grid system should be applied.
+$griddle-collapsible-media-query: "(min-width: 640px)"
 
 // A container for columns.
 @mixin column-container($reverse: false)
@@ -68,7 +68,7 @@ $griddle-collapse-viewport-width: 640px
 .collapsible-row-container
   @include column-container
 
-  @media (min-width: #{ $griddle-collapse-viewport-width })
+  @media #{$griddle-collapsible-media-query}
     @include row-container
 
 // A standard `row` which should be contained within a `row-container`. This column is proportional
