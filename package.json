@@ -1,13 +1,15 @@
 {
   "name": "griddle",
+  "title": "Griddle",
   "version": "0.1.0",
-  "description": "Griddle is a beautiful, simple, responsive, powerful grid system built using flexbox.",
+  "description": "Griddle is a simple, responsive, powerful grid system built using flexbox.",
   "author": "Landon Schropp <schroppl@gmail.com>",
   "homepage": "https://github.com/LandonSchropp/griddle",
   "repository": {
     "type": "git",
     "url": "https://github.com/LandonSchropp/griddle"
   },
+  "keywords": [ "css", "grid", "grid system" ],
   "bugs": {
     "url": "https://github.com/LandonSchropp/griddle/issues"
   },
@@ -22,5 +24,12 @@
     "gulp-replace": "~0.4"
   },
   "private": true,
-  "license": "MIT"
+  "license": "MIT",
+  "npmName": "griddle",
+  "npmFileMap": [{
+    "basePath": "/build/",
+    "files": [
+      "*.css"
+    ]
+  }]
 }
