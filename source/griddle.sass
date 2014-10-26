@@ -90,6 +90,21 @@ $griddle-collapsible-media-query: "(min-width: 640px)"
 // Define the numbers.
 $_numbers: (one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12)
 
+// Generate the fractions
+$_denominators: (third: 3, fourth: 4, fifth: 5, sixth: 6, seventh: 7, eighth: 8, ninth: 9, tenth: 10, eleventh: 11, twelfth: 12)
+$_fractions: (one-half: 50%)
+
+@each $denominator-name, $denominator in $_denominators
+  @each $numerator-name, $numerator in $_numbers
+    @if $numerator < $denominator
+      $fraction: $numerator / $denominator * 100%
+      $fraction-name: "#{ $numerator-name }-#{ $denominator-name }"
+
+      @if $numerator != 1
+        $fraction-name: "#{ $fraction-name }s"
+
+      $_fractions: map-merge($_fractions, (#{ $fraction-name }: $fraction))
+
 // Generate the column and row names and sizes.
 $_columns: (auto-column: auto, column: 1, one-column: 1)
 $_rows: (auto-row: auto, row: 1, one-row: 1)
@@ -105,8 +120,19 @@ $_rows: (auto-row: auto, row: 1, one-row: 1)
   .#{ $name }
     @include row($size: $size)
 
-    &.gutter
-      @include gutter
+// Build a list containing the column and row classes.
+[class$="column"], [class$="row"]
 
-    &.scrollable
-      @include scrollable
+  &.gutter
+    @include gutter
+
+  &.scrollable
+    @include scrollable
+
+  // Allows a user to offset
+  @each $fraction-name, $fraction in $_fractions
+    &.offset-left-#{ $fraction-name }
+      margin-left: $fraction
+
+    &.offset-right-#{ $fraction-name }
+      margin-right: $fraction
