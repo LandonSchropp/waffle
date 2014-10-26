@@ -6,6 +6,10 @@ $griddle-gutter-size: 1rem
 // The media query used determine when the grid system should be applied.
 $griddle-collapsible-media-query: "(min-width: 640px)"
 
+// Private variables defined for Griddle's internal use.
+$_numbers: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven"
+$_fractions: "half", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth"
+
 // A container for columns.
 @mixin column-container($reverse: false)
   display: flex
@@ -28,7 +32,6 @@ $griddle-collapsible-media-query: "(min-width: 640px)"
 //   proportionally. If it's a unit size, such as `300px`, or `auto`, the `column` will be sized
 //   statically.
 @mixin column($size: 1)
-
   @if type-of($size) == "number" and unitless($size)
     flex: $size
   @else
@@ -55,27 +58,40 @@ $griddle-collapsible-media-query: "(min-width: 640px)"
   @include column-container
 
 // The same as a `row-container`, but the order of the `row`s are reversed.
-.reverse-row-container
+.row-container.reverse
   @include row-container($reverse: true)
 
 // The same as a `column-container`, but the order of the `column`s are reversed.
-.reverse-column-container
+.column-container.reverse
   @include column-container($reverse: true)
 
-// A `collapsible-row` that will stack its 'row's into 'columns's when in a mobile browser.
-.collapsible-row-container
-  @include column-container
-
+// A `row-container` that collapses on mobile browsers.
+.row-container.collapsible
   @media #{$griddle-collapsible-media-query}
     @include row-container
 
-// A standard `row` which should be contained within a `row-container`. This column is proportional
-// with a size of 1.
+// A `column-container` that collapses on mobile browsers.
+.column-container.collapsible
+  @media #{$griddle-collapsible-media-query}
+    @include column-container
+
+// A reversed `row-container` that collapses on mobile browsers.
+.row-container.collapsible.reverse
+  @media #{$griddle-collapsible-media-query}
+    @include row-container($reverse: true)
+
+// A reversed `column-container` that collapses on mobile browsers.
+.column-container.collapsible.reverse
+  @media #{$griddle-collapsible-media-query}
+    @include column-container($reverse: true)
+
+// A standard `row` which is contained within a `row-container`. This column is proportional with a
+// size of 1.
 .row
   @include row
 
-// A standard `column` which should be contained within a `column-container`. This column is
-// proportional with a size of 1.
+// A standard `column` which is contained within a `column-container`. This column is proportional
+// with a size of 1.
 .column
   @include column
 
@@ -86,8 +102,6 @@ $griddle-collapsible-media-query: "(min-width: 640px)"
 // A `row` whose height is the same as it's content.
 .auto-row
   @include row($size: auto)
-
-$_numbers: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven"
 
 @for $index from 1 through length($_numbers)
   $number: nth($_numbers, $index)

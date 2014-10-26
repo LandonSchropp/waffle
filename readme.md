@@ -161,9 +161,10 @@ There's still a lot of work to be done on Griddle. Here's the short list:
 - [x] Configure the build script to use the version specified in `package.json`.
 - [ ] Write the documentation for using Griddle with CSS.
 - [ ] Write the documentation for using Griddle with Sass.
-- [ ] Fix the way collapsible rows work.
+- [x] Fix the way collapsible rows work.
 - [ ] Add offsets.
 - [ ] Add scrollable.
+- [ ] Pluralize the columns.
 - [ ] Scope the modifier classes so they only apply to the grid classes.
 - [ ] Create a few basic examples of Griddle in use.
 - [ ] Add the demos to the project page.
