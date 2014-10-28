@@ -1,6 +1,6 @@
 {
   "name": "waffle",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/LandonSchropp/waffle",
   "authors": [ "Landon Schropp <schroppl@gmail.com>" ],
   "description": "A simple, responsive, powerful grid system built using flexbox.",
