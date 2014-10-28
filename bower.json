@@ -1,0 +1,18 @@
+{
+  "name": "waffle",
+  "version": "0.1.0",
+  "homepage": "https://github.com/LandonSchropp/waffle",
+  "authors": [ "Landon Schropp <schroppl@gmail.com>" ],
+  "description": "A simple, responsive, powerful grid system built using flexbox.",
+  "main": "build/waffle.css",
+  "keywords": [ "css", "grid", "grid-system" ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "Gemfile",
+    "Gemfile.lock",
+    "gulpfile.js",
+    "package.json",
+    "source/**/*"
+  ]
+}
