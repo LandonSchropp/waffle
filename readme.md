@@ -1,6 +1,6 @@
 # Waffle
 
-Waffle is a simple, responsive, powerful grid system built using flexbox. It allows a developer to create dynamic, pages quickly and easily. Waffle works in every modern browser, including IE10+.
+Waffle is a simple, powerful, responsive grid system built using flexbox. It allows a developer to create dynamic, pages quickly and easily. Waffle works in every modern browser, including IE10+.
 
 If you'd like to see Waffle in action, check out the [Waffle Demos Collection](http://codepen.io/collection/ucvqb/) on CodePen.
 

@@ -3,7 +3,7 @@
   "version": "0.2.1",
   "homepage": "https://github.com/LandonSchropp/waffle",
   "authors": [ "Landon Schropp <schroppl@gmail.com>" ],
-  "description": "A simple, responsive, powerful grid system built using flexbox.",
+  "description": "A simple, powerful, responsive grid system built using flexbox.",
   "main": "build/waffle.css",
   "keywords": [ "css", "grid", "grid-system" ],
   "license": "MIT",
