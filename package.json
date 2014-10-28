@@ -1,17 +1,17 @@
 {
-  "name": "griddle",
-  "title": "Griddle",
+  "name": "waffle",
+  "title": "Waffle",
   "version": "0.1.0",
-  "description": "Griddle is a simple, responsive, powerful grid system built using flexbox.",
+  "description": "Waffle is a simple, responsive, powerful grid system built using flexbox.",
   "author": "Landon Schropp <schroppl@gmail.com>",
-  "homepage": "https://github.com/LandonSchropp/griddle",
+  "homepage": "https://github.com/LandonSchropp/waffle",
   "repository": {
     "type": "git",
-    "url": "https://github.com/LandonSchropp/griddle"
+    "url": "https://github.com/LandonSchropp/waffle"
   },
   "keywords": [ "css", "grid", "grid system" ],
   "bugs": {
-    "url": "https://github.com/LandonSchropp/griddle/issues"
+    "url": "https://github.com/LandonSchropp/waffle/issues"
   },
   "devDependencies": {
     "gulp": "~3.8",
@@ -25,7 +25,7 @@
   },
   "private": true,
   "license": "MIT",
-  "npmName": "griddle",
+  "npmName": "waffle",
   "npmFileMap": [{
     "basePath": "/build/",
     "files": [

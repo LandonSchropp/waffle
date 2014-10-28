@@ -1,10 +1,10 @@
-/*! Griddle <VERSION> by Landon Schropp (https://github.com/LandonSchropp/griddle) */
+/*! Waffle 0.1.0 by Landon Schropp (https://github.com/LandonSchropp/waffle) */
 
 // The size of the gutter.
-$griddle-gutter-size: 1rem !default
+$waffle-gutter-size: 1rem !default
 
 // The media query used determine when columns and rows should be collapsed.
-$griddle-collapsible-media-query: "(min-width: 640px)" !default
+$waffle-collapsible-media-query: "(min-width: 640px)" !default
 
 // A container for columns.
 @mixin column-container($reverse: false)
@@ -41,7 +41,7 @@ $griddle-collapsible-media-query: "(min-width: 640px)" !default
   @include column($size)
 
 // Applies the gutter to the left and right of a `column` or `row`.
-@mixin gutter($size: $griddle-gutter-size)
+@mixin gutter($size: $waffle-gutter-size)
   & > *
     margin-left: $size / 2
     margin-right: $size / 2
@@ -69,22 +69,22 @@ $griddle-collapsible-media-query: "(min-width: 640px)" !default
 
 // A `column-container` that collapses on mobile browsers.
 .column-container.collapsible
-  @media #{$griddle-collapsible-media-query}
+  @media #{$waffle-collapsible-media-query}
     @include column-container
 
 // A `row-container` that collapses on mobile browsers.
 .row-container.collapsible
-  @media #{$griddle-collapsible-media-query}
+  @media #{$waffle-collapsible-media-query}
     @include row-container
 
 // A reversed `column-container` that collapses on mobile browsers.
 .column-container.collapsible.reverse
-  @media #{$griddle-collapsible-media-query}
+  @media #{$waffle-collapsible-media-query}
     @include column-container($reverse: true)
 
 // A reversed `row-container` that collapses on mobile browsers.
 .row-container.collapsible.reverse
-  @media #{$griddle-collapsible-media-query}
+  @media #{$waffle-collapsible-media-query}
     @include row-container($reverse: true)
 
 // Define the numbers.

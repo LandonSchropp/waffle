@@ -14,7 +14,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('compile', function() {
-  return gulp.src('source/griddle.sass')
+  return gulp.src('source/waffle.sass')
     .pipe(replace(/<VERSION>/, package.version))
     .pipe(gulp.dest('build'))
     .pipe(sass({style: 'expanded', lineNumbers: true}))
@@ -24,9 +24,9 @@ gulp.task('compile', function() {
 });
 
 gulp.task('minify', function() {
-  return gulp.src('build/griddle.css')
+  return gulp.src('build/waffle.css')
     .pipe(minifyCSS())
-    .pipe(rename("griddle.min.css"))
+    .pipe(rename("waffle.min.css"))
     .on('error', function (err) { console.log(err.message); })
     .pipe(gulp.dest('build'));
 });
