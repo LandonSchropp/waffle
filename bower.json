@@ -13,6 +13,6 @@
     "Gemfile.lock",
     "gulpfile.js",
     "package.json",
-    "source/**/*"
+    "source"
   ]
 }
