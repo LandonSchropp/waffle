@@ -12,6 +12,8 @@ To get started with Waffle, download [waffle.css](TODO: Add waffle.css to cdnjs)
 <script src="TODO: Add waffle.css URL"></script>
 ```
 
+If you're using Bower, install Waffle by running `bower install waffle` or add it to your `bower.json` file.
+
 ### Standard Columns
 
 Waffle is build around the idea of *flexibility*. It doesn't make any assumptions about how many columns you have or how you'd like to arrange them.
@@ -179,7 +181,7 @@ There's still a lot of work to be done on Waffle. Here's the short list:
 - [ ] Set up the release task.
 - [ ] Add the library to cdnjs through the release task.
 - [ ] Add a Ruby gem and configure it to deploy.
-- [ ] Make a Bower package for Waffle.
+- [x] Make a Bower package for Waffle.
 - [ ] Write a detailed blog post on how to use Waffle.
 - [ ] Create a nice landing website for Waffle.
 - [ ] Reconsider the class names.
