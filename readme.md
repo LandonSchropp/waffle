@@ -8,19 +8,17 @@ If you'd like to see Waffle in action, check out the [Waffle Demos Collection](h
 
 ### Setup
 
-To get started with Waffle, download [waffle.css](TODO: Add waffle.css to cdnjs) from cdnjs and include it in your project, or include the script like this:
+To get started, download [waffle.css](https://raw.githubusercontent.com/LandonSchropp/waffle/master/build/waffle.css) and include it in your project, or add a link to the library on the jsDelivr CDN.
 
 ``` html
-<script src="TODO: Add waffle.css URL"></script>
+<link href="//cdn.jsdelivr.net/waffle/0.2.1/waffle.min.css" rel="stylesheet" type="text/css">
 ```
 
 If you're using Bower, install Waffle by running `bower install waffle` or add it to your `bower.json` file.
 
 ### Standard Columns
 
-Waffle is build around the idea of *flexibility*. It doesn't make any assumptions about how many columns you have or how you'd like to arrange them.
-
-The best way to start is with an simple example.
+The best way to explain Waffle is with an example.
 
 ``` html
 <section class="column-container">
@@ -30,7 +28,9 @@ The best way to start is with an simple example.
 </section>
 ```
 
-Just like that, you have a three-column layout. Here, we've created a <section> that contains three columns. If you'd like four columns, simply add another column `<div>`.
+Waffle doesn't make any assumptions about how you'd like to arrange your grid. The above example creates a three-column layout because *the `column-container` contains three `column` elements*.
+
+If you'd like four columns, simply add another `<div class="column">`.
 
 ``` html
 <section class="column-container">
@@ -41,7 +41,7 @@ Just like that, you have a three-column layout. Here, we've created a <section> 
 </section>
 ```
 
-Waffle is built around the idea of *proportions*. If you'd like a column to take up more space than another column, you can add a number in front of it.
+Waffle is designed around the idea of *proportions*. If you'd like a column to take up more space than another column, you can add a number in front of it.
 
 ``` html
 <section class="column-container">
@@ -53,11 +53,11 @@ Waffle is built around the idea of *proportions*. If you'd like a column to take
 
 Here, the first column takes up 50% of the screen. The second and third columns take up 25%. `column` is a shorthand for `one-column`.
 
-Using this flexibility, Waffle can do any layout of a twelve-column grid system. However, it's much more flexible then that, allowing you to do unique layouts such as five columns, thirteen columns or anything else you can imagine!
+Waffle can do any layout of a standard twelve-column grid system. However, it's much more flexible then that; it allows you to do unique layouts such as five columns, thirteen columns or any other proportional layout.
 
 ### Auto-Columns
 
-The most powerful feature of Waffle is auto-columns. An auto-column is a column that sizes itself to its content. As the container resizes, the column will stay the same size. This means you can create flexible layouts like this:
+The most powerful feature of Waffle is auto-columns. An auto-column is a column that sizes itself to its content. As the container resizes, an auto-column will stay the same size. This means you can create flexible layouts like this:
 
 ``` html
 <section class="column-container">
@@ -65,18 +65,16 @@ The most powerful feature of Waffle is auto-columns. An auto-column is a column 
     <img src="http://placehold.it/100x100" class="profile-picture">
   </figure>
   <div class="column">
-    <p>
-      Here's a little bit more about me...
-    </p>
+    <p>Here's a little bit more about me…</p>
   </div>
 </section>
 ```
 
-In this example, as the `column-container` resizes, the profile image will stay the same size and the paragraph will resize itself accordingly.
+In this example, when `column-container` resizes, the profile image will stay the same width and the paragraph will fill the rest of the space.
 
 ### Rows
 
-Waffle also works horizontally!
+Waffle also works vertically!
 
 ``` html
 <section class="row-container">
@@ -88,13 +86,9 @@ Waffle also works horizontally!
 
 Rows should have a `row` class, and be placed in a `row-container`. You can use any of the extensions to `row` that you could use for columns, such as `three-row` and `auto-row`.
 
-### Nesting
-
-Waffle is nestable! Go nuts nesting columns and rows as deeply as you'd like.
-
 ### Gutter
 
-Waffle includes gutters. To apply a gutter to a column or row, simply add a `gutter` class to it.
+Waffle includes gutters. To apply a gutter to a column or row, simply add a `gutter` class to it. The gutter is always on the left and right sides of a `row` or `column`.
 
 ``` html
 <section class="row-container">
@@ -110,25 +104,75 @@ Waffle includes gutters. To apply a gutter to a column or row, simply add a `gut
 </section>
 ```
 
+### Nesting
+
+Waffle is nestable! Go nuts nesting columns and rows as deeply as you'd like.
+
+``` html
+<main class="row-container">
+  <header class="auto-row column-container">
+    <h1 class="column gutter">Page Title</h1>
+    <a class="auto-column gutter">Home</a>
+    <a class="auto-column gutter">Blog</a>
+    <a class="auto-column gutter">About</a>
+  </header>
+  <section class="row">
+    <div class="column gutter">
+      <h2>Sidebar</h2>
+    </div>
+    <div class="three-column gutter">
+      <h2>Main content</h2>
+    </div>
+  </section>
+  <footer class="auto-row">
+    <p>Footer</p>
+  </footer>
+</main>
+```
+
 ### Responsive Design
 
-Waffle includes a responsive element. Add a `collapsible` class to a `row-container` or `column-container` and it will automatically collapse in mobile. This is entrely optional, allowing you to choose which container
+Add a `collapsible` class to a `row-container` or `column-container`, and it will automatically collapse in mobile.
+
+``` html
+<section class="column-container collapsible">
+  <div class="column">Column 1</div>
+  <div class="column">Column 2</div>
+  <div class="column">Column 3</div>
+</section>
+```
 
 ### Scrollable
 
 In order to build powerful, responsive layouts, it's useful to make a row scrollable. You can do that by adding a `scrollable` class to the row.
 
+``` html
+<section class="row-container">
+  <div class="auto-row">Row 1</div>
+  <div class="row scrollable">Row 2…</div>
+  <div class="auto-row">Row 3</div>
+</section>
+```
+
 ### Reverse Ordering
 
-You can reverse the order of the columns and rows by including the `reverse` class.
+You can reverse the order of columns and rows by including the `reverse` class.
+
+``` html
+<section class="column-container reverse">
+  <div class="column">Column 1</div>
+  <div class="column">Column 2</div>
+  <div class="column">Column 3</div>
+</section>
+```
 
 ## Using Waffle with Sass
 
-Waffle is fully capable of being used purely with Sass. If you'd like clean markup, want to add additional methodology or cut down on your CSS's size, you can use Waffle's Sass mixins.
+If you'd like clean markup, want to add additional methodology or cut down on your CSS's size, you can use Waffle's Sass mixins instead of
 
 ### Setup
 
-Download the Waffle Sass file and include it in your project. By default, none of the properties are prefixed, so be sure you're also using [Autoprefixer](https://github.com/postcss/autoprefixer).
+Download [waffle.sass](https://raw.githubusercontent.com/LandonSchropp/waffle/master/build/waffle.sass) and include it in your project. By default, none of the properties are prefixed, so be sure you're also using [Autoprefixer](https://github.com/postcss/autoprefixer).
 
 If you'd like to configure Waffle, set these variables before importing it:
 
@@ -137,7 +181,7 @@ If you'd like to configure Waffle, set these variables before importing it:
 
 ### Mixins
 
-All of the classes in the CSS can be achieved by using Waffle's class mixins. Here's the full list of supported functions:
+All of the classes in waffle.css can be achieved by using Waffle's class mixins. Here's the full list.
 
 * `column-container($reverse: false)`: Creates a container for columns. This mixin takes one parameter, `$reverse`, which determines if the `column-container`'s columns are reversed or not.
 * `row-container($reverse: false)`: The same thing as `column-container`, but for rows.
@@ -148,20 +192,18 @@ All of the classes in the CSS can be achieved by using Waffle's class mixins. He
 
 ## Gotchas
 
-There are a few minor caveats to be aware of when using Waffle:
+There are a few minor caveats to be aware of when using Waffle.
 
-* Due to the way flexbox works, the gutter cannot be applied directly to a column or row element.
-Instead, it's applied to each of the child elements of the `row` and `column`. Therefore, in order for the gutter to show up on a column, it must have a child element.
-* The gutter is always on the left and right sides of a `row` or `column`.
-* When columns or rows are different size, adding a border can throw off their sizes. To fix this, use an inset `box-shadow` instead.
+* A gutter cannot be applied directly to a column or row element. Instead, it's applied to each of the child elements of the row and column. Therefore, in order for the gutter to show up, the row or column must have a child element.
+* When columns or rows are different size, adding a border can throw off their proportional sizes. To fix this, use an inset `box-shadow` instead.
 * Margins inside of grid columns and rows don't collapse.
-* It's possible some of the Waffle classes can collide with class names in your CSS. In order to prevent this, the modifier classes such as `gutter`, `collapsible`, `scrollable` and `reverse` have been scoped so they only apply to Waffle classes. The only classes you need to watch out for are the container, row and column classes.
+* It's possible some of the Waffle classes can collide with class names in your CSS. In order to prevent this, the modifier classes such as `gutter`, `collapsible`, `scrollable` and `reverse` have been scoped so they only apply to Waffle classes. The only classes you need to watch out for are the `column-container`, `row-container`, `column` and `row` classes.
 
 ## Credits
 
 Waffle was created by [Landon Schropp](http://twitter.com/LandonSchropp).
 
-I have to give a special thanks to [Quve](http://www.quve.com/), my employer. All of the development for Waffle was done while working at Quve, and they were kind enough to let me open source this project and share it with you. If you're a developer in the Seattle area and you're interested working for an awesome company and building great products, [drop me a line](mailto:landon@quve.com).
+I have to give a special thanks to [Quve](http://www.quve.com/), my employer. A good chunk of the development for Waffle was done while working at Quve, and they were kind enough to let me open source this project and share it with you. If you're a developer in the Seattle area and you're interested working for an awesome company, [drop me a line](mailto:landon@quve.com).
 
 ## Todo
 
@@ -170,8 +212,8 @@ There's still a lot of work to be done on Waffle. Here's the short list:
 - [x] Add a build script for generating the CSS files.
 - [x] Add the license.
 - [x] Configure the build script to use the version specified in `package.json`.
-- [ ] Write the documentation for using Waffle with CSS.
-- [ ] Write the documentation for using Waffle with Sass.
+- [x] Write the documentation for using Waffle with CSS.
+- [x] Write the documentation for using Waffle with Sass.
 - [x] Fix the way collapsible rows work.
 - [x] Add scrollable.
 - [x] Pluralize the rows and columns.
@@ -181,7 +223,7 @@ There's still a lot of work to be done on Waffle. Here's the short list:
 - [ ] Create a few basic examples of Waffle in use.
 - [x] Add the demos to the project page.
 - [ ] Set up the release task.
-- [ ] Add the library to cdnjs through the release task.
+- [x] Add the library to a CDN.
 - [ ] Add a Ruby gem and configure it to deploy.
 - [x] Make a Bower package for Waffle.
 - [ ] Write a detailed blog post on how to use Waffle.
