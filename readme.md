@@ -11,7 +11,7 @@ If you'd like to see Waffle in action, check out the [Waffle Demos Collection](h
 To get started, download [waffle.css](https://raw.githubusercontent.com/LandonSchropp/waffle/master/build/waffle.css) and include it in your project, or add a link to the library on the jsDelivr CDN.
 
 ``` html
-<link href="//cdn.jsdelivr.net/waffle/0.2.1/waffle.min.css" rel="stylesheet" type="text/css">
+<link href="//cdn.jsdelivr.net/waffle/0.3.0/waffle.min.css" rel="stylesheet" type="text/css">
 ```
 
 If you're using Bower, install Waffle by running `bower install waffle` or add it to your `bower.json` file.

@@ -1,4 +1,4 @@
-/*! Waffle 0.2.1 by Landon Schropp (https://github.com/LandonSchropp/waffle) */
+/*! Waffle 0.3.0 by Landon Schropp (https://github.com/LandonSchropp/waffle) */
 /* line 55, ../waffle.sass */
 .column-container {
   display: -webkit-flex;
@@ -99,7 +99,7 @@
   }
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .auto-column {
   -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;
@@ -110,13 +110,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .auto-column.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .column {
   -webkit-flex: 1;
       -ms-flex: 1;
@@ -127,13 +127,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .column.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .one-column {
   -webkit-flex: 1;
       -ms-flex: 1;
@@ -144,13 +144,30 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .one-column.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
+.phi-column {
+  -webkit-flex: 1.61803;
+      -ms-flex: 1.61803;
+          flex: 1.61803;
+}
+/* line 45, ../waffle.sass */
+.phi-column.gutter > * {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+/* line 113, ../waffle.sass */
+.phi-column.scrollable {
+  overflow: scroll;
+  overflow-scrolling: touch;
+}
+
+/* line 105, ../waffle.sass */
 .two-columns {
   -webkit-flex: 2;
       -ms-flex: 2;
@@ -161,13 +178,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .two-columns.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .three-columns {
   -webkit-flex: 3;
       -ms-flex: 3;
@@ -178,13 +195,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .three-columns.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .four-columns {
   -webkit-flex: 4;
       -ms-flex: 4;
@@ -195,13 +212,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .four-columns.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .five-columns {
   -webkit-flex: 5;
       -ms-flex: 5;
@@ -212,13 +229,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .five-columns.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .six-columns {
   -webkit-flex: 6;
       -ms-flex: 6;
@@ -229,13 +246,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .six-columns.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .seven-columns {
   -webkit-flex: 7;
       -ms-flex: 7;
@@ -246,13 +263,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .seven-columns.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .eight-columns {
   -webkit-flex: 8;
       -ms-flex: 8;
@@ -263,13 +280,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .eight-columns.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .nine-columns {
   -webkit-flex: 9;
       -ms-flex: 9;
@@ -280,13 +297,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .nine-columns.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .ten-columns {
   -webkit-flex: 10;
       -ms-flex: 10;
@@ -297,13 +314,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .ten-columns.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .eleven-columns {
   -webkit-flex: 11;
       -ms-flex: 11;
@@ -314,13 +331,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .eleven-columns.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .twelve-columns {
   -webkit-flex: 12;
       -ms-flex: 12;
@@ -331,13 +348,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .twelve-columns.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .auto-row {
   -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;
@@ -348,13 +365,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .auto-row.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .row {
   -webkit-flex: 1;
       -ms-flex: 1;
@@ -365,13 +382,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .row.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .one-row {
   -webkit-flex: 1;
       -ms-flex: 1;
@@ -382,13 +399,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .one-row.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .two-rows {
   -webkit-flex: 2;
       -ms-flex: 2;
@@ -399,13 +416,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .two-rows.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .three-rows {
   -webkit-flex: 3;
       -ms-flex: 3;
@@ -416,13 +433,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .three-rows.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .four-rows {
   -webkit-flex: 4;
       -ms-flex: 4;
@@ -433,13 +450,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .four-rows.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .five-rows {
   -webkit-flex: 5;
       -ms-flex: 5;
@@ -450,13 +467,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .five-rows.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .six-rows {
   -webkit-flex: 6;
       -ms-flex: 6;
@@ -467,13 +484,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .six-rows.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .seven-rows {
   -webkit-flex: 7;
       -ms-flex: 7;
@@ -484,13 +501,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .seven-rows.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .eight-rows {
   -webkit-flex: 8;
       -ms-flex: 8;
@@ -501,13 +518,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .eight-rows.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .nine-rows {
   -webkit-flex: 9;
       -ms-flex: 9;
@@ -518,13 +535,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .nine-rows.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .ten-rows {
   -webkit-flex: 10;
       -ms-flex: 10;
@@ -535,13 +552,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .ten-rows.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .eleven-rows {
   -webkit-flex: 11;
       -ms-flex: 11;
@@ -552,13 +569,13 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .eleven-rows.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
 }
 
-/* line 120, ../waffle.sass */
+/* line 105, ../waffle.sass */
 .twelve-rows {
   -webkit-flex: 12;
       -ms-flex: 12;
@@ -569,7 +586,7 @@
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
-/* line 128, ../waffle.sass */
+/* line 113, ../waffle.sass */
 .twelve-rows.scrollable {
   overflow: scroll;
   overflow-scrolling: touch;
