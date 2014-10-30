@@ -91,8 +91,8 @@ $waffle-collapsible-media-query: "(min-width: 640px)" !default
 $_numbers: (one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12)
 
 // Generate the column and row names and sizes.
-$_columns: (auto-column: auto, column: 1, one-column: 1)
-$_rows: (auto-row: auto, row: 1, one-row: 1)
+$_columns: (auto-column: auto, column: 1, one-column: 1, phi-column: 1.618033988)
+$_rows: (auto-row: auto, row: 1, one-row: 1, phi-column: 1.618033988)
 
 @for $index from 2 through length($_numbers)
   $name: nth(map-keys($_numbers), $index)
