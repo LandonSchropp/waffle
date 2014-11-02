@@ -223,7 +223,7 @@ There are a few minor caveats to be aware of when using Waffle.
 
 Waffle was created by [Landon Schropp](http://twitter.com/LandonSchropp).
 
-I'd like to give a special thanks to [Quve](http://www.quve.com/), my employer. A good chunk of the development for Waffle was done while working at Quve, and they were kind enough to let me open source this project and share it with you. If you're a developer in the Seattle area and you're interested working for an awesome company, [drop me a line](mailto:landon@quve.com).
+I'd like to give a special thanks to [Quve](http://www.quve.com/), my employer. A decent chunk of the development for Waffle was done while working at Quve, and they were kind enough to let me open source this project and share it with you. If you're a developer in the Seattle area and you're interested working for an awesome company, [drop me a line](mailto:landon@quve.com).
 
 ## Todo
 
