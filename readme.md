@@ -22,38 +22,58 @@ The best way to explain Waffle is with an example.
 
 ``` html
 <section class="column-container">
-  <div class="column">Column 1</div>
-  <div class="column">Column 2</div>
-  <div class="column">Column 3</div>
+  <div class="one-column">Column 1</div>
+  <div class="one-column">Column 2</div>
+  <div class="one-column">Column 3</div>
 </section>
 ```
 
-Waffle doesn't make any assumptions about how you'd like to arrange your grid. The above example creates a three-column layout because *the `column-container` contains three `column` elements*.
+In the above example, there are three `one-column` divs. Since each column takes up one unit, then all of the columns take up `1 ÷ (1 + 1 + 1)`, or ⅓ of the total space.
 
-If you'd like four columns, simply add another `<div class="column">`.
+If you'd like four equal-sized columns, simply add another `<div class="one-column">`.
 
 ``` html
 <section class="column-container">
-  <div class="column">Column 1</div>
-  <div class="column">Column 2</div>
-  <div class="column">Column 3</div>
-  <div class="column">Column 4</div>
+  <div class="one-column">Column 1</div>
+  <div class="one-column">Column 2</div>
+  <div class="one-column">Column 3</div>
+  <div class="one-column">Column 4</div>
 </section>
 ```
 
-Waffle is designed around the idea of *proportions*. If you'd like a column to take up more space than another column, you can add a number in front of it.
+Waffle is designed around the idea of *proportions*. It doesn't make any assumptions about how you'd like to arrange your grid. If you'd like a column to take up more space than another column, you can prepend it with a different number.
 
 ``` html
 <section class="column-container">
   <div class="two-columns">Column 1</div>
+  <div class="one-column">Column 2</div>
+  <div class="one-column">Column 3</div>
+</section>
+```
+
+Here, the columns add up to four units. The first column takes up `2 ÷ (2 + 1 + 1)`, or ½ of the space. The last two columns take up `1 ÷ (2 + 1 + 1)`, or ¼ each.
+
+Waffle can do any layout a standard twelve-column grid system can do. However, it's much more flexible then that; it allows you to do unique layouts such as five columns, thirteen columns, seventeen columns or any other proportion you can think of.
+
+### Column Shorthand
+
+You can use `column` as a shorthand for `one-column`. The following examples are equivalent.
+
+``` html
+<section class="column-container">
+  <div class="one-column">Column 1</div>
+  <div class="one-column">Column 2</div>
+  <div class="one-column">Column 3</div>
+</section>
+```
+
+``` html
+<section class="column-container">
+  <div class="column">Column 1</div>
   <div class="column">Column 2</div>
   <div class="column">Column 3</div>
 </section>
 ```
-
-Here, the first column takes up 50% of the screen. The second and third columns take up 25%. `column` is a shorthand for `one-column`.
-
-Waffle can do any layout of a standard twelve-column grid system. However, it's much more flexible then that; it allows you to do unique layouts such as five columns, thirteen columns or any other proportional layout.
 
 ### Auto-Columns
 
