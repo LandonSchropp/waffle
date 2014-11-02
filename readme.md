@@ -220,12 +220,10 @@ There's still a lot of work to be done on Waffle. Here's the short list:
 - [x] Reorder the column and row styles so they're consistant.
 - [x] Scope the modifier classes so they only apply to the grid classes.
 - [x] Make Waffle use the variables defined by the importer if they've already been set.
-- [ ] Create a few basic examples of Waffle in use.
+- [x] Create a few basic examples of Waffle in use.
 - [x] Add the demos to the project page.
-- [ ] Set up the release task.
 - [x] Add the library to a CDN.
 - [ ] Add a Ruby gem and configure it to deploy.
 - [x] Make a Bower package for Waffle.
 - [ ] Write a detailed blog post on how to use Waffle.
 - [ ] Create a nice landing website for Waffle.
-- [ ] Reconsider the class names.
