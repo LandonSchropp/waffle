@@ -1,4 +1,4 @@
-/*! Waffle 0.3.0 by Landon Schropp (https://github.com/LandonSchropp/waffle) */
+/*! Waffle 0.3.1 by Landon Schropp (https://github.com/LandonSchropp/waffle) */
 
 // The size of the gutter.
 $waffle-gutter-size: 1rem !default
@@ -52,19 +52,19 @@ $waffle-collapsible-media-query: "(min-width: 640px)" !default
   overflow-scrolling: touch
 
 // A `column-container` contains one or more `column`'s.
-.column-container
+.column-container:not(.collapsible)
   @include column-container
 
 // A `row-container` contains one or more `row`'s.
-.row-container
+.row-container:not(.collapsible)
   @include row-container
 
 // The same as a `column-container`, but the order of the `column`s are reversed.
-.column-container.reverse
+.column-container:not(.collapsible).reverse
   @include column-container($reverse: true)
 
 // The same as a `row-container`, but the order of the `row`s are reversed.
-.row-container.reverse
+.row-container:not(.collapsible).reverse
   @include row-container($reverse: true)
 
 // A `column-container` that collapses on mobile browsers.

@@ -1,6 +1,6 @@
-/*! Waffle 0.3.0 by Landon Schropp (https://github.com/LandonSchropp/waffle) */
+/*! Waffle 0.3.1 by Landon Schropp (https://github.com/LandonSchropp/waffle) */
 /* line 55, ../waffle.sass */
-.column-container {
+.column-container:not(.collapsible) {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -10,7 +10,7 @@
 }
 
 /* line 59, ../waffle.sass */
-.row-container {
+.row-container:not(.collapsible) {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -20,7 +20,7 @@
 }
 
 /* line 63, ../waffle.sass */
-.column-container.reverse {
+.column-container:not(.collapsible).reverse {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -33,7 +33,7 @@
 }
 
 /* line 67, ../waffle.sass */
-.row-container.reverse {
+.row-container:not(.collapsible).reverse {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
